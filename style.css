@@ -11,14 +11,14 @@ body {
 	position: relative;
 	display: flex;
 	font-family: 'Arial', sans-serif;
-	font-size: 64px;
+	font-size: 48px;
 	color: #f16448;
 }
 
 .cursor {
 	display: inline-block;
-	width: 8px;
-	height: 64px;
+	width: 6px;
+	height: 48px;
 	background-color: #f16448;
 	margin-left: 2px;
 	animation: blink 0.7s infinite;
