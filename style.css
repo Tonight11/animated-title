@@ -1,128 +1,106 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css');
+
 * {
-	border: 0;
-	box-sizing: border-box;
-	margin: 0;
 	padding: 0;
-}
-:root {
-	--bg: #0e1318;
-	--fg: hsl(223, 10%, 10%);
-	--primary: hsl(223, 90%, 50%);
-	--primary-t: hsla(223, 90%, 50%, 0);
-	--unchecked: #82aedd;
-	--checked: hsl(133, 70%, 40%);
-	--trans-dur: 0.4s;
-	--trans-timing1: cubic-bezier(0.65, 0, 0.35, 1);
-	--trans-timing2: cubic-bezier(0.68, -0.6, 0.32, 1.6);
-	font-size: calc(40px + (80 - 40) * (100vw - 320px) / (2560 - 320));
-}
-body,
-input {
-	font: 1em/1.5 sans-serif;
-	transition: background-color var(--trans-dur), color var(--trans-dur);
-}
-body {
-	background-color: var(--bg);
-	display: flex;
-	height: 100vh;
-}
-.switch,
-.switch__input {
-	-webkit-tap-highlight-color: transparent;
-}
-.switch {
-	display: flex;
-	align-items: center;
-	margin: auto;
-}
-.switch__input {
-	background-color: var(--unchecked);
-	border-radius: 0.75em;
-	box-shadow: 0 0 0 0.125em var(--primary-t);
-	outline: transparent;
-	position: relative;
-	width: 2.25em;
-	height: 1.5em;
-	transition: background-color var(--trans-dur) var(--trans-timing1),
-		box-shadow 0.15s var(--trans-timing1),
-		transform var(--trans-dur) var(--trans-timing2);
-	-webkit-appearance: none;
-	appearance: none;
-}
-.switch__input:focus-visible {
-	box-shadow: 0 0 0 0.125em var(--primary);
-}
-.switch__input:before {
-	background-color: var(--bg);
-	border-radius: 50%;
-	content: '';
-	display: block;
-	position: absolute;
-	top: 0.25em;
-	left: 0.25em;
-	transition: background-color var(--trans-dur),
-		transform var(--trans-dur) var(--trans-timing2);
-	width: 1em;
-	height: 1em;
-}
-.switch__letters,
-.switch__letter {
-	transition: transform var(--trans-dur) var(--trans-timing2);
-}
-.switch__letters {
-	margin-left: 0.375em;
-	overflow: visible;
-	pointer-events: none;
-	width: 1.5em;
-	height: 1.5em;
-}
-.switch__letter:last-child {
-	transform: translateX(14px);
-}
-.switch__letter-stroke {
-	stroke: var(--unchecked);
-	transition: stroke var(--trans-dur) var(--trans-timing1),
-		stroke-dashoffset var(--trans-dur) var(--trans-timing2),
-		transform var(--trans-dur) var(--trans-timing2);
-}
-.switch__letter-stroke:nth-child(2) {
-	transform-origin: 2px 2px;
-}
-.switch__text {
-	overflow: hidden;
-	position: absolute;
-	width: 1px;
-	height: 1px;
+	margin: 0;
+	box-sizing: border-box;
 }
 
-/* “on” state */
-.switch__input:checked {
-	background-color: var(--checked);
+.wrapper {
+	display: flex;
+	height: 100vh;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	background-color: #0e1318;
 }
-.switch__input:checked,
-.switch__input:checked + .switch__letters {
-	transform: translateX(0.375em);
+
+.social-container {
+	position: relative;
+
+	display: flex;
+	gap: 15px;
+	padding: 0;
+	margin: 0;
 }
-.switch__input:checked:before {
-	transform: translateX(0.75em);
+
+.item {
+	width: 40px;
+	height: 40px;
+	display: flex;
+	cursor: pointer;
+	position: relative;
+	transition: all 0.3s;
+	list-style: none;
 }
-.switch__input:checked ~ .switch__letters .switch__letter-stroke {
-	stroke: var(--checked);
+
+.fab {
+	position: relative;
+	z-index: 2;
+
+	width: 100%;
+	height: 100%;
+	font-size: 18px;
+	transition: 0.3s;
+	display: grid;
+	place-items: center;
+	border-radius: 50%;
+	color: rgba(255, 255, 255, 0.878);
 }
-.switch__input:checked ~ .switch__letters .switch__letter-stroke:nth-child(2) {
-	stroke-dashoffset: 6;
+
+.bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 30%;
+	transition: all 0.3s;
+	filter: grayscale(1);
 }
-.switch__input:checked ~ .switch__letters .switch__letter-stroke:last-child {
-	stroke-dashoffset: 4;
+
+.insta-bg {
+	background: linear-gradient(
+		45deg,
+		#f09433 0%,
+		#e6683c 25%,
+		#dc2743 50%,
+		#cc2366 75%,
+		#bc1888 100%
+	);
 }
-.switch__input:checked
-	~ .switch__letters
-	.switch__letter:first-child
-	.switch__letter-stroke:nth-child(2) {
-	stroke-dashoffset: 0;
-	transform: rotate(56.5deg);
+
+.link-bg {
+	background: rgb(1, 80, 123);
 }
-.switch__input:checked ~ .switch__letters .switch__letter:last-child {
-	stroke-dashoffset: 0;
-	transform: translateX(8px);
+
+.whats-bg {
+	background: #15a54a;
+}
+
+.pint-bg {
+	background: #e60023;
+}
+
+.face-bg {
+	background: #215eae;
+}
+
+.social-container .item:hover .bg {
+	filter: grayscale(0);
+}
+
+.social-container .item:hover span:last-child {
+	transform: translate(-15px, -35px);
+	width: 100px;
+}
+
+.social-container .item span:last-child {
+	position: absolute;
+	color: white;
+	font-family: 'calibri';
+	width: 0px;
+	overflow: hidden;
+	z-index: 0;
+	top: 10%;
+	transform: translateX(-15px);
+	transition: 0.3s linear;
 }
