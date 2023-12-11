@@ -1,106 +1,51 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css');
-
-* {
-	padding: 0;
+*,
+*::before,
+*::after {
 	margin: 0;
+	padding: 0;
 	box-sizing: border-box;
 }
 
-.wrapper {
-	display: flex;
+body {
 	height: 100vh;
-	width: 100%;
+	background-color: #0e1318;
+	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: #0e1318;
 }
 
-.social-container {
-	position: relative;
-
-	display: flex;
-	gap: 15px;
-	padding: 0;
-	margin: 0;
-}
-
-.item {
-	width: 40px;
-	height: 40px;
-	display: flex;
+button {
+	border: 0;
 	cursor: pointer;
 	position: relative;
-	transition: all 0.3s;
-	list-style: none;
 }
-
-.fab {
+button div {
+	background-color: rgb(255, 70, 85);
+	padding: 1.2rem 5.5rem;
 	position: relative;
-	z-index: 2;
-
-	width: 100%;
-	height: 100%;
-	font-size: 18px;
-	transition: 0.3s;
-	display: grid;
-	place-items: center;
-	border-radius: 50%;
-	color: rgba(255, 255, 255, 0.878);
-}
-
-.bg {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	border-radius: 30%;
-	transition: all 0.3s;
-	filter: grayscale(1);
-}
-
-.insta-bg {
-	background: linear-gradient(
-		45deg,
-		#f09433 0%,
-		#e6683c 25%,
-		#dc2743 50%,
-		#cc2366 75%,
-		#bc1888 100%
-	);
-}
-
-.link-bg {
-	background: rgb(1, 80, 123);
-}
-
-.whats-bg {
-	background: #15a54a;
-}
-
-.pint-bg {
-	background: #e60023;
-}
-
-.face-bg {
-	background: #215eae;
-}
-
-.social-container .item:hover .bg {
-	filter: grayscale(0);
-}
-
-.social-container .item:hover span:last-child {
-	transform: translate(-15px, -35px);
-	width: 100px;
-}
-
-.social-container .item span:last-child {
-	position: absolute;
-	color: white;
-	font-family: 'calibri';
-	width: 0px;
 	overflow: hidden;
-	z-index: 0;
-	top: 10%;
-	transform: translateX(-15px);
-	transition: 0.3s linear;
+}
+button a {
+	position: relative;
+	text-decoration: none;
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: #ece8e1;
+	text-transform: uppercase;
+	z-index: 2;
+}
+
+button span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 120%;
+	height: 110%;
+	background-color: rgb(15, 25, 35);
+	transform: translateX(-55%) skew(-10deg);
+	transition: 0.4s ease;
+}
+
+button:hover span {
+	transform: translateX(-5%) skew(-10deg);
 }
