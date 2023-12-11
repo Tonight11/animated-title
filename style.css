@@ -42,7 +42,7 @@ button span {
 	width: 120%;
 	height: 110%;
 	background-color: rgb(15, 25, 35);
-	transform: translateX(-55%) skew(-10deg);
+	transform: translateX(-105%) skew(-10deg);
 	transition: 0.4s ease;
 }
 
